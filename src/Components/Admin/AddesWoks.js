@@ -11,7 +11,7 @@ const handle=()=>{
     fetch('http://localhost:7000/addWorks',{
         method:'POST',
         headers:{
-            'Content-Type': 'application/json'
+            'Content-Type':'application/json'
         },
         body:JSON.stringify(fakeData)
     })
