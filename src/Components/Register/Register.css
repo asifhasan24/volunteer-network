@@ -1,0 +1,19 @@
+.registration{
+    border: 1px solid gray;
+    box-shadow: 5px 10px 10px gray;
+    border-radius: 10px;
+}
+.registration input{
+    border: none;
+    border-bottom: 1px solid gray;
+    height: 40px;
+    outline: none;
+    width: 350px;
+}
+.registerBtn{
+    height: 35px;
+    width: 350px;
+    background-color: royalblue;
+    border: none;
+    outline: none;
+}

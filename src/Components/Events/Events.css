@@ -1,0 +1,8 @@
+.eventLink{
+    text-decoration: none !important;
+    color: black !important;
+}
+.eventLink:hover{
+    color: cornflowerblue;
+    text-decoration: none !important;
+}
