@@ -42,7 +42,7 @@ const RegisterList = () => {
                     <Link to='/admin'><p className='ml-1 addEvent'>Add Event</p></Link>
                 </div>
            </div>
-           <h3 className='ml-5 mb-4'>Volunteer register list :</h3>
+           <h3 className='ml-5 mb-4 text-center'>Volunteer register list :</h3>
                 
                  <div className='row '>
                      <div className="d-flex justify-content-center mb-2 col-md-12 ">

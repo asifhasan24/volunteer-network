@@ -3,25 +3,26 @@ import { Link } from 'react-router-dom';
 import logo from '../../logos/Group 1329.png'
 import plusIcon from '../../logos/plus 1.png'
 import userIcon from '../../logos/users-alt 1.png'
+import fakeData from '../../fakedata'
 import './AddesWorks.css'
 const AddesWoks = () => {
-// const handle=()=>{
-//     const event={name:document.getElementById('name').value,description:document.getElementById('description').value,date:document.getElementById('date').value}
-//     fetch('http://localhost:5000/addWorks',{
-//         method:'POST',
-//         headers:{
-//             'Content-Type': 'application/json'
-//         },
-//         body:JSON.stringify(event)
-//     })
-// }
+const handle=()=>{
+    
+    fetch('http://localhost:5000/addWorks',{
+        method:'POST',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body:JSON.stringify(fakeData)
+    })
+}
     return (
-        <div>
-              <div className="text-center">
+        <div classname="uncommon">
+              <div>
            <img width='150px' src={logo} alt=""/>
            
            </div>
-           <div className="d-flex justify-content-around">
+           <div className=" justify-content-around">
                 <div className='d-flex mt-4 mb-5 mr-5'>
                     <img height='10px'className='img-fluid' src={plusIcon} alt=""/>
                     <Link to='/admin'><p className='ml-1 workList'>Add Event</p></Link>
@@ -49,7 +50,7 @@ const AddesWoks = () => {
                         </div>
                     </div>
                     <div className="d-flex justify-content-end">
-                        <button type="submit" className='addEventBtn bg-success'>Submit</button>
+                        <button onClick={handle} type="submit" className='addEventBtn bg-danger'>Submit</button>
                     </div>
                 </form>
             </div>
