@@ -8,7 +8,7 @@ import './AddesWorks.css'
 const AddesWoks = () => {
 const handle=()=>{
     
-    fetch('http://localhost:5000/addWorks',{
+    fetch('http://localhost:7000/addWorks',{
         method:'POST',
         headers:{
             'Content-Type': 'application/json'

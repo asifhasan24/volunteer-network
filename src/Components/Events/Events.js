@@ -8,7 +8,7 @@ const Events = () => {
     const [loggedInUser,setLoggedInUser]=useContext(userInfo);
     const [events,setEvents]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/registers?email='+loggedInUser.email)
+        fetch('http://localhost:7000/registers?email='+loggedInUser.email)
         .then(res=>res.json())
         .then(data=>setEvents(data))
     },[])
@@ -16,7 +16,7 @@ const Events = () => {
     const handleCancel=(id)=>{
         const div=document.getElementById(id)
         div.style.display='none';
-        fetch(`http://localhost:5000/delete/${id}`,{
+        fetch(`http://localhost:7000/delete/${id}`,{
             method:'DELETE'
         })
         .then(res=>res.json())

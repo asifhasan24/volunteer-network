@@ -6,7 +6,7 @@ const VolinteerWorks = () => {
 
     const [worksTypes,setWorksTypes]=useContext(userContext)
     useEffect(()=>{
-        fetch('http://localhost:5000/works')
+        fetch('http://localhost:7000/works')
         .then(res=>res.json())
         .then(data=>{
             setWorksTypes(data)

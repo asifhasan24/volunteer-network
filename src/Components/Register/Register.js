@@ -10,13 +10,13 @@ const Register = () => {
     const [work,setWork]=useState({})
     const [state,setState]=useState(false)
     useEffect(()=>{
-        fetch(`http://localhost:5000/works/${id}`)
+        fetch(`http://localhost:7000/works/${id}`)
         .then(res=>res.json())
         .then(data=>setWork(data))
     },[])
     const handleRegister=(e)=>{
         const newRegister={...loggedInUser,name:work.name,_id:loggedInUser.email+String(work.key),description:work.description,pic:work.pic,date:new Date(),}
-        fetch('http://localhost:5000/registration',{
+        fetch('http://localhost:7000/registration',{
             method:'POST',
             headers:{
                 'Content-Type': 'application/json'
