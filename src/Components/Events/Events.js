@@ -8,15 +8,15 @@ const Events = () => {
     const [loggedInUser,setLoggedInUser]=useContext(userInfo);
     const [events,setEvents]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:7000/registers?email='+loggedInUser.email)
+        fetch('https://hidden-castle-11326.herokuapp.com/registers?email='+loggedInUser.email)
         .then(res=>res.json())
         .then(data=>setEvents(data))
     },[])
  
-    const handleCancel=(id)=>{
-        const div=document.getElementById(id)
-        div.style.display='none';
-        fetch(`http://localhost:7000/delete/${id}`,{
+    const handleCancelBtn=(id)=>{
+        const area=document.getElementById(id)
+        area.style.display='none';
+        fetch(`https://hidden-castle-11326.herokuapp.com/delete/${id}`,{
             method:'DELETE'
         })
         .then(res=>res.json())
@@ -55,10 +55,10 @@ const Events = () => {
                                 <div className="col-md-6">
                                     <div className="card-body">
                                         <h5 className="card-title">{event.name}</h5>
-                                        <p>2018/5/22</p>
+                                        <p>20208/4/24</p>
                                         <br/>
                                         <br/>
-                                        <button onClick={()=>handleCancel(event._id)}>Cancel</button>
+                                        <button className="btn-dark" onClick={()=>handleCancelBtn(event._id)}>Cancel</button>
                                     </div>
                                 </div>
                             </div>

@@ -6,7 +6,7 @@ const VolinteerWorks = () => {
 
     const [worksTypes,setWorksTypes]=useContext(userContext)
     useEffect(()=>{
-        fetch('http://localhost:7000/works')
+        fetch('https://hidden-castle-11326.herokuapp.com/works')
         .then(res=>res.json())
         .then(data=>{
             setWorksTypes(data)

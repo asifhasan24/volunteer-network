@@ -8,17 +8,16 @@ import { Link } from 'react-router-dom';
 const RegisterList = () => {
     const [registers,setRegisters]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:7000/registersList')
+        fetch('https://hidden-castle-11326.herokuapp.com/registersList')
         .then(res=>res.json())
         .then(data=>{
            setRegisters(data);
         })
     },[])
-    const handleTrash=(id)=>{
-        const div=document.getElementById(id)
-        console.log(document.getElementById(id))
-        div.style.display='none';
-        fetch(`http://localhost:7000/deleteEvent/${id}`,{
+    const handleBin=(id)=>{
+        const area=document.getElementById(id)
+         area.style.display='none';
+        fetch(`https://hidden-castle-11326.herokuapp.com/deleteEvent/${id}`,{
             method:'DELETE'
         })
         .then(res=>res.json())
@@ -32,7 +31,7 @@ const RegisterList = () => {
            <img width='150px' src={logo} alt=""/>
            
            </div>
-           <div className="d-flex justify-content-around">
+           <div className=" justify-content-around">
                 <div className='d-flex  mt-4 mb-5'>
                     <img height='10px' className='img-fluid' src={userIcon} alt=""/>
                     <Link to='/admin1'><p className='ml-1 volunteerList'>Volunteer register list</p></Link>
@@ -44,13 +43,14 @@ const RegisterList = () => {
            </div>
            <h3 className='ml-5 mb-4 text-center'>Volunteer register list :</h3>
                 
-                 <div className='row '>
+                 <div className='row mark'>
                      <div className="d-flex justify-content-center mb-2 col-md-12 ">
                          <h5 className="ml-5" style={{width:'190px'}}>Name</h5>
                          <h5 className="ml-5"style={{width:'210px'}}>Email Id</h5>
                          <h5 className="ml-5"style={{width:'230px'}}>Registrating Date</h5>
                          <h5 className="ml-5"style={{width:'200px'}}>Volunteer List</h5>
                          <h5 className="ml-5">Action</h5>
+                        
                      </div>
                         {
                             registers.map(register=>{
@@ -62,7 +62,7 @@ const RegisterList = () => {
                                                 <p className='mb-5 ml-5' style={{width:'250px'}}>{register.email}</p>
                                                 <p className='mb-5 ml-5'style={{width:'250px'}}>{register.date}</p>
                                                 <p className='mb-5 ml-5'style={{width:'200px'}}>{register.name}</p>
-                                            <button onClick={()=>handleTrash(register._id)} className='trashBtn ml-5'>
+                                            <button onClick={()=>handleBin(register._id)} className='trashBtn ml-5'>
                                                 <img width='30px' src={trashIcon} alt=""/>
                                             </button>
                                         </div>

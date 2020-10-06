@@ -10,24 +10,24 @@ const Register = () => {
     const [work,setWork]=useState({})
     const [state,setState]=useState(false)
     useEffect(()=>{
-        fetch(`http://localhost:7000/works/${id}`)
+        fetch(`https://hidden-castle-11326.herokuapp.com/works/${id}`)
         .then(res=>res.json())
         .then(data=>setWork(data))
     },[])
-    const handleRegister=(e)=>{
-        const newRegister={...loggedInUser,name:work.name,_id:loggedInUser.email+String(work.key),description:work.description,pic:work.pic,date:new Date(),}
-        fetch('http://localhost:7000/registration',{
+    const handleRegisterBtn=(e)=>{
+        const newRegisterEvent={...loggedInUser,name:work.name,_id:loggedInUser.email+String(work.key),description:work.description,pic:work.pic,date:new Date(),}
+        fetch('https://hidden-castle-11326.herokuapp.com/registration',{
             method:'POST',
             headers:{
                 'Content-Type': 'application/json'
             },
-            body:JSON.stringify(newRegister)
+            body:JSON.stringify(newRegisterEvent)
         })
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
         })
-        setState( true);
+        setState(true);
         e.preventDefault();
     }
     if(state) {
@@ -52,7 +52,7 @@ const Register = () => {
 
                     <input type="text" placeholder='Description' name="" id=""/><br/> <br/>
                     <input type="text" value={work.name} name="" id=""/><br/> <br/>
-                    <button onClick={handleRegister}  className="registerBtn">Registration</button>
+                    <button onClick={handleRegisterBtn}  className="registerBtn">Registration</button>
             </form>
             </div>
         </div>

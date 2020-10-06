@@ -6,9 +6,9 @@ import userIcon from '../../logos/users-alt 1.png'
 import fakeData from '../../fakedata'
 import './AddesWorks.css'
 const AddesWoks = () => {
-const handle=()=>{
+const handleBtn=()=>{
     
-    fetch('http://localhost:7000/addWorks',{
+    fetch('https://hidden-castle-11326.herokuapp.com/addWorks',{
         method:'POST',
         headers:{
             'Content-Type':'application/json'
@@ -50,7 +50,7 @@ const handle=()=>{
                         </div>
                     </div>
                     <div className="d-flex justify-content-end">
-                        <button onClick={handle} type="submit" className='addEventBtn bg-danger'>Submit</button>
+                        <button onClick={handleBtn} type="submit" className='addEventBtn bg-danger'>Submit</button>
                     </div>
                 </form>
             </div>
