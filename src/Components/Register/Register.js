@@ -10,13 +10,13 @@ const Register = () => {
     const [work, setWork] = useState({})
     const [registration, setRegistration] = useState(false)
     useEffect(() => {
-        fetch(`https://ficrme-mese696484.herokuapp.com/works/${id}`)
+        fetch(`https://fierce-mesa-96484.herokuapp.com/works/${id}`)
             .then(res => res.json())
             .then(data => setWork(data))
     }, [])
     const handleRegister = (e) => {
         const newRegister = { ...loggedInUser, name: work.name, _id: loggedInUser.email + String(work.key), description: work.description, pic: work.pic, date: new Date(), }
-        fetch('https://ficrme-mese696484.herokuapp.com/registration', {
+        fetch('https://fierce-mesa-96484.herokuapp.com/registration', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
