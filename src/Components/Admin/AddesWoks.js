@@ -34,7 +34,7 @@ const handleBtn=()=>{
                 
            </div>
             <div className="d-flex justify-content-center mt-5">
-                <form className='shadow ' action='http://localhost:5000/addWorks' method='post'>
+                <form className='shadow ' action='https://hidden-castle-11326.herokuapp.com/addWorks' method='post'>
                     <div className="d-flex m-3">
                         <div>
                             <h5>Event Title</h5>
