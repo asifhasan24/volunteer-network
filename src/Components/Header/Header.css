@@ -1,0 +1,31 @@
+.searchBox{
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid lightgray;
+}
+.searchBtn{
+    border-radius: 10px;
+    position: relative;
+    right:50px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.bg{
+    background-color: lightskyblue;
+    background-image: url(../../images/event-volunteers.jpg);
+    background-size: cover;
+    background-blend-mode: lighten;
+    height: 500px;
+}
+.link{
+    text-decoration: none !important;
+    color: black !important;
+}
+.link:hover{
+    color: cornflowerblue !important;
+    text-decoration: none !important;
+}

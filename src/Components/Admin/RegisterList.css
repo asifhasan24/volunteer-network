@@ -10,13 +10,11 @@
     margin-left: 150px  !important;
 }
 .addEvent, .volunteerList{
-    background-color: goldenrod;
+    background-color: mediumslateblue !important;
+    text-decoration: none !important;
+    color: black !important;
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 7px;
-    color:black;
-}
-.mark{
-    border-bottom: 1px solid black3;
 }
